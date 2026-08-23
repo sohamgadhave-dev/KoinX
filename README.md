@@ -77,4 +77,5 @@ Follow these instructions to run the project in your local development environme
 - **Vercel Compatibility:** Resolved Node binary path execution discrepancies between local Windows environments and Vercel's Linux runners by strictly standardizing the `package.json` build scripts.
 
 ---
-*Developed by Soham Gadhave for the KoinX Frontend Assessment.*
+*Developed by Soham Gadhave
+*
