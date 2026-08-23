@@ -6,11 +6,10 @@
   "description": "KoinX Tax Loss Harvesting Tool - Optimize crypto taxes through strategic loss harvesting",
   "scripts": {
     "dev": "node.exe ./node_modules/vite/bin/vite.js",
-    "build": "node.exe ./node_modules/vite/bin/vite.js build",
-    "preview": "node.exe ./node_modules/vite/bin/vite.js preview"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@esbuild/win32-x64": "^0.28.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
