@@ -1,6 +1,6 @@
 # KoinX - Tax Loss Harvesting Tool
 
-[![Live Demo](https://img.shields.io/badge/demo-Live%20View-blue.svg)](https://your-vercel-deployment-url-here.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/demo-Live%20View-blue.svg)](https://koinx-lyart-iota.vercel.app/)
 [![React](https://img.shields.io/badge/react-19.1.0-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/vite-7.0.0-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 
