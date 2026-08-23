@@ -1,0 +1,85 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) 40px;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-card);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  text-decoration: none;
+}
+
+.logoText {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-koinx-blue);
+  letter-spacing: -0.5px;
+}
+
+.logoX {
+  color: var(--color-koinx-orange);
+}
+
+.logoSup {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  vertical-align: super;
+  margin-left: 1px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.themeToggle {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  width: 36px;
+  height: 36px;
+  transition: all var(--transition-fast);
+}
+
+.themeToggle:hover {
+  background-color: var(--color-bg-card-hover);
+  border-color: var(--color-text-tertiary);
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  padding: var(--spacing-sm);
+  cursor: pointer;
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: var(--spacing-md);
+  }
+
+  .menuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

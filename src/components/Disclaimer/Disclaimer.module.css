@@ -1,0 +1,99 @@
+.wrapper {
+  border: 1.5px solid var(--color-border-accent);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--spacing-lg);
+  background-color: var(--color-disclaimer-bg);
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.trigger:hover {
+  opacity: 0.8;
+}
+
+.triggerLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.infoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--color-accent-blue);
+  color: white;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.chevron {
+  transition: transform var(--transition-base);
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow), padding var(--transition-slow);
+}
+
+.contentOpen {
+  max-height: 500px;
+}
+
+.list {
+  padding: 0 var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+  margin: 0;
+  list-style: disc;
+  padding-left: calc(var(--spacing-lg) + var(--spacing-lg));
+}
+
+.list li {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-xs);
+}
+
+@media (max-width: 768px) {
+  .trigger {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+
+  .list {
+    padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    padding-left: calc(var(--spacing-md) + var(--spacing-lg));
+  }
+
+  .list li {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+  }
+}

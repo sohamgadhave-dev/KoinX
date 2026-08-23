@@ -1,0 +1,400 @@
+.section {
+  margin-top: var(--spacing-lg);
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg) 0;
+  box-shadow: var(--shadow-card);
+  transition: background-color var(--transition-base);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  padding: 0 var(--spacing-lg);
+  color: var(--color-text-primary);
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* ---- Header Row ---- */
+.table thead tr {
+  border-bottom: none;
+}
+
+.table th {
+  padding: 12px var(--spacing-lg);
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-card-hover);
+  white-space: nowrap;
+}
+
+.table th:first-child {
+  width: 48px;
+  padding-right: 0;
+}
+
+.thRight {
+  text-align: right !important;
+}
+
+.sortableHeader {
+  cursor: pointer;
+  user-select: none;
+  transition: opacity var(--transition-fast);
+}
+
+.sortableHeader:hover {
+  opacity: 0.8;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-xs);
+}
+
+.sortIcon {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+  display: flex;
+  align-items: center;
+}
+
+.thHoldingsSub {
+  display: block;
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+/* ---- Table Rows ---- */
+.table tbody tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: var(--color-bg-card-hover);
+}
+
+.selectedRow {
+  background-color: var(--color-bg-selected-row) !important;
+}
+
+.table td {
+  padding: 8px var(--spacing-md);
+  font-size: var(--font-size-base);
+  vertical-align: middle;
+}
+
+.table td:first-child {
+  width: 48px;
+  padding-right: 0;
+}
+
+/* ---- Checkbox ---- */
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkboxInput {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+  background-color: transparent;
+  flex-shrink: 0;
+}
+
+.checkboxInput:checked {
+  background-color: var(--color-accent-blue);
+  border-color: var(--color-accent-blue);
+}
+
+.checkboxInput:checked::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkboxInput:hover,
+.table tbody tr:hover .checkboxInput:not(:checked) {
+  border-color: var(--color-accent-blue);
+}
+
+/* ---- Asset Cell ---- */
+.assetCell {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.coinLogo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--color-bg-card-hover);
+  flex-shrink: 0;
+}
+
+.coinInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.coinName {
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+.coinSymbol {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* ---- Holdings Cell ---- */
+.holdingsCell {
+  text-align: right;
+}
+
+.holdingsAmount {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.holdingsPrice {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin-top: 2px;
+}
+
+/* ---- Price Cell ---- */
+.priceCell {
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* ---- Gain Cells ---- */
+.gainCell {
+  text-align: right;
+}
+
+.gainValue {
+  font-weight: 600;
+  font-size: var(--font-size-base);
+}
+
+.gainPositive {
+  color: var(--color-positive);
+}
+
+.gainNegative {
+  color: var(--color-negative);
+}
+
+.gainNeutral {
+  color: var(--color-text-secondary);
+}
+
+.gainBalance {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin-top: 2px;
+}
+
+/* ---- Amount to Sell ---- */
+.amountToSell {
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.amountDash {
+  color: var(--color-text-tertiary);
+  text-align: right;
+}
+
+/* ---- Value Tooltip ---- */
+.valueWithTooltip {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+}
+
+.valueTooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-tooltip-bg);
+  color: var(--color-tooltip-text);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
+  pointer-events: none;
+}
+
+.valueTooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--color-tooltip-bg);
+}
+
+.valueWithTooltip:hover .valueTooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ---- View All ---- */
+.viewAll {
+  padding: var(--spacing-md) var(--spacing-lg) 0;
+}
+
+.viewAllButton {
+  background: none;
+  border: none;
+  color: var(--color-accent-blue);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-family);
+  transition: opacity var(--transition-fast);
+}
+
+.viewAllButton:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+/* ---- Skeleton ---- */
+.skeletonRow td {
+  padding: var(--spacing-md);
+}
+
+.skeletonCell {
+  height: 16px;
+  border-radius: var(--radius-sm);
+}
+
+.skeletonAsset {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.skeletonAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.skeletonText {
+  height: 16px;
+  width: 100px;
+  border-radius: var(--radius-sm);
+}
+
+.skeletonTextSm {
+  height: 12px;
+  width: 60px;
+  border-radius: var(--radius-sm);
+  margin-top: 4px;
+}
+
+.skeletonValue {
+  height: 16px;
+  width: 80px;
+  border-radius: var(--radius-sm);
+  margin-left: auto;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .table th,
+  .table td {
+    padding: var(--spacing-sm) var(--spacing-sm);
+  }
+
+  .table th:first-child,
+  .table td:first-child {
+    width: 36px;
+  }
+
+  .coinLogo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .coinName {
+    font-size: var(--font-size-sm);
+    max-width: 100px;
+  }
+
+  .coinSymbol {
+    font-size: var(--font-size-xs);
+  }
+
+  .holdingsAmount {
+    font-size: var(--font-size-sm);
+  }
+
+  .holdingsPrice {
+    font-size: var(--font-size-xs);
+  }
+}

@@ -1,0 +1,276 @@
+.cardsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* ---- Pre Harvesting Card ---- */
+.preCard {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  padding-bottom: 56px; /* Space for absolute savings line alignment */
+  box-shadow: var(--shadow-card);
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+.gainsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gainsTable th {
+  text-align: right;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  padding-bottom: var(--spacing-md);
+}
+
+.gainsTable th:first-child {
+  text-align: left;
+}
+
+.gainsTable td {
+  padding: 6px 0;
+  font-size: var(--font-size-base);
+}
+
+.gainsTable td:first-child {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.gainsTable td:not(:first-child) {
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.netRow td {
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.realisedSection {
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.realisedLabel {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.realisedValue {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+/* ---- After Harvesting Card ---- */
+.afterCard {
+  background: var(--color-harvest-bg);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  padding-bottom: 56px; /* Space for absolute savings line alignment */
+  color: var(--color-harvest-text);
+  box-shadow: 0 4px 20px rgba(0, 82, 254, 0.25);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.afterCard::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.afterCard .cardTitle {
+  color: var(--color-harvest-text);
+}
+
+.afterCard .gainsTable th {
+  color: var(--color-harvest-label);
+}
+
+.afterCard .gainsTable td:first-child {
+  color: var(--color-harvest-label);
+}
+
+.afterCard .gainsTable td:not(:first-child) {
+  color: var(--color-harvest-text);
+}
+
+.afterCard .netRow td {
+  border-top-color: var(--color-harvest-border);
+  color: var(--color-harvest-text) !important;
+}
+
+.effectiveSection {
+  margin-top: auto;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-harvest-border);
+}
+
+.effectiveLabel {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-harvest-text);
+}
+
+.effectiveValue {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-harvest-text);
+  margin-left: var(--spacing-sm);
+}
+
+.savingsLine {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 15px; /* Increased from sm to match design */
+  font-weight: 500;
+  color: var(--color-harvest-text);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  letter-spacing: -0.2px;
+}
+
+.savingsAmount {
+  font-weight: 700;
+}
+
+.savingsHidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.savingsVisible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Skeleton ---- */
+.skeletonCard {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.skeletonLine {
+  height: 16px;
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--radius-sm);
+}
+
+.skeletonLineShort {
+  width: 60%;
+}
+
+.skeletonLineMed {
+  width: 80%;
+}
+
+.skeletonLineFull {
+  width: 100%;
+}
+
+/* ---- Tooltips ---- */
+.valueWithTooltip {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+}
+
+.valueTooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-tooltip-bg);
+  color: var(--color-tooltip-text);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
+  pointer-events: none;
+}
+
+.valueTooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--color-tooltip-bg);
+}
+
+.valueWithTooltip:hover .valueTooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.skeletonTitle {
+  height: 24px;
+  width: 40%;
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .cardsContainer {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .realisedValue,
+  .effectiveValue {
+    font-size: var(--font-size-xl);
+  }
+
+  .gainsTable td,
+  .gainsTable th {
+    font-size: var(--font-size-sm);
+  }
+}
